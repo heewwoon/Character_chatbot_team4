@@ -1,2 +1,2 @@
+openai==1.0.0  # 최신 버전으로 업데이트
 streamlit
-openai
