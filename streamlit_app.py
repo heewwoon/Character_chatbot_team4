@@ -2,7 +2,8 @@ import streamlit as st
 import openai
 
 # Streamlit secrets에서 API 키 가져오기
-openai.api_key = st.secrets["openai"]["api_key"]
+# API 키를 코드에 직접 하드코딩
+openai.api_key = "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"  # 실제 API 키를 여기에 입력하세요.
 
 # 앱 제목 및 설명
 st.title("💬 피카츄 Chatbot")
