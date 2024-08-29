@@ -1,8 +1,8 @@
 import streamlit as st
 import openai
 
-# 미리 입력된 OpenAI API 키 설정
-openai.api_key = "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"  # 여기에 실제 API 키를 입력하세요.
+# OpenAI API 키 설정
+openai.api_key = "your-api-key"  # 여기에 실제 API 키를 입력하세요.
 
 # Show title and description
 st.title("💬 피카츄 Chatbot")
@@ -33,13 +33,14 @@ if prompt := st.chat_input("피카츄에게 말을 걸어보세요!"):
 
     # Generate response
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=st.session_state.messages,
+        response = openai.Completion.create(
+            model="text-davinci-003",  # 혹은 "gpt-3.5-turbo" 등
+            prompt="\n".join(m["content"] for m in st.session_state.messages),
+            max_tokens=150
         )
 
-        # 최신 API 응답 처리
-        message_content = response.choices[0].message["content"]
+        # 응답 내용 처리
+        message_content = response.choices[0].text.strip()
         st.session_state.messages.append({"role": "assistant", "content": message_content})
         
         with st.chat_message("assistant"):
