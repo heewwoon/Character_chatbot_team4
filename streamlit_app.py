@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # OpenAI API 키 설정
-openai.api_key = "your-api-key"  # 여기에 실제 OpenAI API 키를 입력하세요.
+openai.api_key = st.secrets["openai"]["api_key"]
 
 # 앱 제목 및 설명
 st.title("💬 피카츄 Chatbot")
