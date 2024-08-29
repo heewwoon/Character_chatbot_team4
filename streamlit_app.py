@@ -8,7 +8,8 @@ openai.api_key = openai_api_key
 # Show title and description
 st.title("💬 피카츄 Chatbot")
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses."
+    #"This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses."
+    "앗! 야생의 피카츄 가(이) 나타났다!"
 )
 
 # Initialize chat history
