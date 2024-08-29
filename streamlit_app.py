@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 
-# OpenAI API 키 설정
+# Streamlit secrets에서 API 키 가져오기
 openai.api_key = st.secrets["openai"]["api_key"]
 
 # 앱 제목 및 설명
